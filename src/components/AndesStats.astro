@@ -1,0 +1,241 @@
+<section class="andes-stats-section">
+  <div class="andes-stats-bg"></div>
+
+  <div class="andes-stats-content">
+    <div class="andes-cards left-cards">
+      <div class="andes-card">
+        <img src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/cropped-icon-cuadrado.png" alt="Andes Safety">
+        <span>Más de 17 años de<br>experiencia y trayectoria</span>
+      </div>
+
+      <div class="andes-card">
+        <img src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/cropped-icon-cuadrado.png" alt="Andes Safety">
+        <span>Más de 500 diferentes EPP<br>disponibles</span>
+      </div>
+    </div>
+
+    <div class="andes-person">
+      <img src="https://banamailing.com/andes-safety/wp-content/uploads/2026/05/Chica-Camisa-Andes-Safety-1-600x600-1.avif" alt="Trabajadora Andes Safety">
+    </div>
+
+    <div class="andes-cards right-cards">
+      <div class="andes-card right">
+        <span>Más de 2000 empresas<br>atendidas</span>
+        <img src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/cropped-icon-cuadrado.png" alt="Andes Safety">
+      </div>
+
+      <div class="andes-card right">
+        <span>Más de 15 marcas líderes<br>aliadas</span>
+        <img src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/cropped-icon-cuadrado.png" alt="Andes Safety">
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.andes-stats-section{
+  position:relative;
+  width:100%;
+  height:500px;
+  overflow:hidden;
+  background:#fff;
+  margin-top:-40px;
+}
+
+.andes-stats-section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:190px;
+  background:#313131;
+  clip-path:polygon(0 0, 100% 0, 100% 1%, 0 100%);
+  z-index:3;
+}
+
+.andes-stats-bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.78),rgba(255,255,255,.78)),
+    url("https://banamailing.com/andes-safety/wp-content/uploads/2020/10/DSC4428-jpg.webp") center/cover no-repeat;
+  background-attachment:fixed;
+  z-index:1;
+}
+
+.andes-stats-bg::after{
+  content:"";
+  position:absolute;
+  bottom:-65px;
+  left:-5%;
+  width:110%;
+  height:100px;
+  background:#fff;
+  transform:rotate(-2deg);
+}
+
+.andes-stats-content{
+  position:relative;
+  z-index:5;
+  height:100%;
+  max-width:1180px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.1fr 440px 1.1fr;
+  align-items:center;
+  gap:30px;
+  padding-top:30px;
+}
+
+.andes-person{
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  height:100%;
+  overflow:visible;
+}
+
+.andes-person img{
+  max-height:540px;
+  width:auto;
+  object-fit:contain;
+  display:block;
+}
+
+.andes-cards{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  justify-content:center;
+  height:100%;
+}
+
+.andes-card{
+  width:117%;
+  position:relative;
+  min-height:95px;
+  background:#fff;
+  box-shadow:0 12px 28px rgba(0,0,0,.24);
+  transition:transform .9s cubic-bezier(.16,1,.3,1);
+  border-radius:50px 0 0 50px;
+  display:flex;
+  align-items:center;
+  gap:28px;
+  padding:18px 36px 18px 24px;
+  font-family:Arial,sans-serif;
+  font-size:21px;
+  line-height:1.25;
+  color:#313131;
+  text-align:center;
+}
+.andes-card::after{
+  content:"";
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:55px;
+  height:55px;
+  background:#0494D4;
+  clip-path:polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.andes-card img{
+  width:54px;
+  height:54px;
+  object-fit:contain;
+  flex:0 0 auto;
+}
+
+.andes-card span{
+  flex:1;
+}
+
+.andes-card.right{
+  border-radius:0 50px 50px 0;
+  padding:18px 24px 18px 36px;
+}
+
+.andes-card.right::after{
+  right:auto;
+  left:0;
+  clip-path:polygon(0 0, 0 100%, 100% 100%);
+}
+
+.andes-person{
+  animation:chicaSube 1s ease forwards;
+  animation-delay:.2s;
+}
+
+.left-cards{
+  animation:cardIzquierda .9s ease forwards;
+  animation-delay:.3s;
+  opacity:0;
+}
+
+.right-cards{
+  animation:cardDerecha .9s ease forwards;
+  animation-delay:.45s;
+  opacity:0;
+}
+
+.andes-card{
+  transition:transform .55s cubic-bezier(.25,.46,.45,.94);
+  transform-origin:center;
+}
+
+.andes-card:hover{
+  transform:translateY(-6px) scale(1.02);
+}
+
+@keyframes chicaSube{
+  from{ opacity:0; transform:translateY(120px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+@keyframes cardIzquierda{
+  from{ opacity:0; transform:translateX(-80px); }
+  to{ opacity:1; transform:translateX(0); }
+}
+
+@keyframes cardDerecha{
+  from{ opacity:0; transform:translateX(80px); }
+  to{ opacity:1; transform:translateX(0); }
+}
+
+@media(max-width:768px){
+  .andes-stats-section{ height:1155px; }
+  .andes-stats-section::before{ height:150px; top:-70px; }
+  .andes-stats-bg{ inset:40px 0 0 0; }
+  .andes-stats-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    gap:22px;
+    padding:120px 20px 40px;
+  }
+  .andes-cards{ width:100%; gap:18px; }
+  .left-cards{ order:1; }
+  .andes-person{ order:2; height:auto; }
+  .andes-person img{ max-height:400px; max-width:100%; }
+  .right-cards{ order:3; }
+  .andes-card,
+  .andes-card.right{
+    width:100%;
+    border-radius:28px;
+    padding:20px;
+    font-size:20px;
+    min-height:92px;
+  }
+  .andes-card::after,
+  .andes-card.right::after{
+    width:42px;
+    height:42px;
+    right:0;
+    left:auto;
+    clip-path:polygon(100% 0, 0 100%, 100% 100%);
+  }
+  .andes-card.right{ flex-direction:row-reverse; }
+  .andes-card img{ width:48px; height:48px; }
+}
+</style>
