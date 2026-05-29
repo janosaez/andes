@@ -1,0 +1,415 @@
+---
+// Éficer — Landing Page
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Éficer — Software de Gestión de Activos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', 'Inter', sans-serif;
+      background: #080E1C;
+      color: #fff;
+    }
+
+    /* ── HERO SECTION ─────────────────────────── */
+    .ef-hero-section {
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(255,106,61,.10) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 50% at 10% 80%, rgba(55,214,208,.07) 0%, transparent 60%),
+        linear-gradient(160deg, #0B1222 0%, #080E1C 60%, #0C1525 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 100px 6vw 80px;
+    }
+
+    @media (max-width: 900px) {
+      .ef-hero-section {
+        grid-template-columns: 1fr;
+        padding: 80px 5vw 60px;
+        gap: 48px;
+      }
+    }
+
+    /* ── FORM CARD ────────────────────────────── */
+    .eficer-form-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 24px;
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+
+    .eficer-form-header {
+      background: linear-gradient(135deg, rgba(255,106,61,.18), rgba(55,214,208,.10));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding: 28px 32px;
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .calendar-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FF6A3D, #F04B23);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 8px 20px rgba(255,106,61,.35);
+    }
+
+    .calendar-icon { font-size: 22px; }
+
+    .header-text h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .header-text p {
+      font-size: 14px;
+      color: rgba(255,255,255,.55);
+    }
+
+    .eficer-contact-form { padding: 28px 32px 32px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,.65);
+      letter-spacing: .3px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-size: 15px;
+      color: #fff;
+      outline: none;
+      transition: border-color .2s;
+      font-family: inherit;
+      width: 100%;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,.3); }
+
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: rgba(255,106,61,.6); }
+
+    .form-group textarea {
+      min-height: 90px;
+      resize: vertical;
+      margin-bottom: 16px;
+    }
+
+    .captcha-container { margin-bottom: 16px; }
+
+    .eficer-security-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(55,214,208,.07);
+      border: 1px solid rgba(55,214,208,.18);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+    }
+
+    .security-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+    .security-text strong {
+      display: block;
+      font-size: 13px;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .security-text p { font-size: 12px; color: rgba(255,255,255,.5); }
+
+    .eficer-submit-btn {
+      width: 100%;
+      min-height: 56px;
+      background: linear-gradient(135deg, #FF6A3D, #F04B23);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(255,106,61,.35);
+      transition: all .25s ease;
+      font-family: inherit;
+    }
+
+    .eficer-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px rgba(255,106,61,.45);
+    }
+
+    .eficer-form-footer {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      font-size: 12px;
+      color: rgba(255,255,255,.45);
+    }
+
+    /* ── HERO CSS (del usuario) ───────────────── */
+    .eficer-hero {
+      font-family: 'Segoe UI', sans-serif;
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    .eficer-hero-left { margin-top: -60px; }
+
+    .eficer-badge {
+      display: inline-block;
+      padding: 10px 22px;
+      border: 1px solid rgba(255,106,61,.55);
+      background: rgba(255,106,61,.08);
+      color: #FF6A3D;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 22px;
+    }
+
+    .eficer-title {
+      margin: 0;
+      max-width: 850px;
+      color: #ffffff;
+      font-size: clamp(40px, 5.4vw, 70px);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      text-shadow: 0 18px 45px rgba(0,0,0,.28);
+    }
+
+    .eficer-orange { color: #FF6A3D; }
+
+    .eficer-underline { position: relative; display: inline-block; }
+
+    .eficer-underline::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #FF6A3D 0%, #37D6D0 100%);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(55,214,208,.35);
+    }
+
+    .eficer-subtitle {
+      margin-top: 34px;
+      max-width: 620px;
+      color: rgba(255,255,255,.68);
+      font-size: 20px;
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+    .eficer-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 44px;
+    }
+
+    .eficer-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60px;
+      padding: 0 34px;
+      border-radius: 12px;
+      font-size: 17px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all .25s ease;
+    }
+
+    .eficer-btn-primary {
+      color: #ffffff;
+      background: linear-gradient(135deg, #FF6A3D, #F04B23);
+      box-shadow: 0 18px 35px rgba(255,106,61,.35);
+    }
+
+    .eficer-btn-secondary {
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,.65);
+      background: rgba(255,255,255,.04);
+    }
+
+    .eficer-btn-secondary:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,.10);
+      color: #ffffff;
+    }
+
+    .eficer-btn-whatsapp {
+      color: #ffffff;
+      background: linear-gradient(135deg, #FF6A3D, #F04B23);
+      box-shadow: 0 18px 35px rgba(255,106,61,.35);
+      border: 1px solid rgba(255,106,61,.65);
+    }
+
+    .eficer-btn-whatsapp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 45px rgba(255,106,61,.45);
+      color: #ffffff;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 767px) {
+      .eficer-hero-left { margin-top: 0; }
+      .eficer-title { font-size: 42px; letter-spacing: -1.5px; }
+      .eficer-subtitle { font-size: 17px; }
+      .eficer-buttons { flex-direction: column; }
+      .eficer-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="ef-hero-section">
+
+    <div class="eficer-hero eficer-hero-left">
+      <div class="eficer-badge">SOFTWARE DE GESTIÓN DE ACTIVOS</div>
+
+      <h1 class="eficer-title">
+        Evita observaciones en auditorías
+        <span class="eficer-orange">
+          y deja de depender de
+          <span class="eficer-underline">Excel</span>
+        </span>
+        para controlar tus activos
+      </h1>
+
+      <p class="eficer-subtitle">
+        Éficer te ayuda a controlar, auditar y gestionar todos tus activos fijos desde una sola plataforma. Sin Excel. Sin desorden. Sin observaciones.
+      </p>
+
+      <div class="eficer-buttons">
+        <a class="eficer-btn eficer-btn-whatsapp"
+           href="https://wa.me/51999252787?text=Hola,%20quiero%20saber%20c%C3%B3mo%20evitar%20observaciones%20en%20auditor%C3%ADas%20y%20mejorar%20el%20control%20de%20nuestros%20activos.%20Requiero%20orientaci%C3%B3n%20sobre%20c%C3%B3mo%20%C3%89ficer%20podr%C3%ADa%20ayudarnos."
+           target="_blank">
+          💬 Hablar por WhatsApp
+        </a>
+        <a class="eficer-btn eficer-btn-secondary" href="#como-funciona">
+          ▶️ Ver Video Demostrativo
+        </a>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="eficer-form-card">
+      <div class="eficer-form-header">
+        <div class="header-flex">
+          <div class="calendar-circle">
+            <span class="calendar-icon">📅</span>
+          </div>
+          <div class="header-text">
+            <h2>Agenda tu demostración personalizada</h2>
+            <p>Completa tus datos y agenda tu demostración. Sin compromiso.</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="eficer-contact-form" action="" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre *</label>
+            <input type="text" name="nombre_eficer" required minlength="3">
+          </div>
+          <div class="form-group">
+            <label>Institución / Empresa *</label>
+            <input type="text" name="empresa_eficer" required minlength="3">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Teléfono *</label>
+            <input type="tel" name="tel_eficer" required minlength="7">
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" name="email_eficer" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Mensaje opcional</label>
+          <textarea name="mensaje_eficer" placeholder="Cuéntanos brevemente sobre tu institución y tus necesidades"></textarea>
+        </div>
+
+        <div class="eficer-security-box">
+          <div class="security-icon">🔒</div>
+          <div class="security-text">
+            <strong>Tu información está 100% segura</strong>
+            <p>No compartimos tu información con terceros.</p>
+          </div>
+        </div>
+
+        <button type="submit" name="submit_eficer" class="eficer-submit-btn">
+          Agendar mi demostración personalizada
+        </button>
+
+        <div class="eficer-form-footer">
+          <span>⏱ Te contactamos en menos de 24 horas</span>
+          <span>🛡 Sin compromiso y sin riesgo</span>
+        </div>
+      </form>
+    </div>
+
+  </section>
+
+  <!-- SIGUIENTES SECCIONES AQUÍ -->
+
+</body>
+</html>

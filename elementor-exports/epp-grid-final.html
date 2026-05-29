@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EPP Grid — Andes Safety</title>
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body style="margin:0;background:#f0f0f0;">
+<style>
+.asepp-wrap {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 35px 16px;
+  box-sizing: border-box;
+  position: relative;
+  background: #ffffff;
+}
+.asepp-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: linear-gradient(to bottom, rgba(49,49,49,0.90) 0%, rgba(49,49,49,1) 100%), url('https://banamailing.com/andes-safety/wp-content/uploads/2026/05/DSC4512-jpg.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  clip-path: polygon(0 0, 100% 5.7%, 100% 100%, 0 100%);
+  z-index: 0;
+}
+.asepp-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.asepp-header {
+  margin: 0 0 24px;
+  background: rgba(4, 147, 210, 0.40);
+  border-radius: 30px 30px 30px 0;
+  padding: 19px 36px;
+  text-align: center;
+}
+.asepp-header-title {
+  margin: 0 0 12px;
+  font-size: clamp(1.35rem, 2.3vw, 1.75rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+.asepp-header-text {
+  margin: 0;
+  font-size: clamp(0.75rem, 1.1vw, 0.88rem);
+  color: #ffffff;
+  line-height: 1.53;
+  font-style: italic;
+}
+.asepp-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.asepp-card {
+  position: relative;
+  background: #fff;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+  text-decoration: none;
+  display: block;
+  aspect-ratio: 25 / 30;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+.asepp-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(4,147,210,0.14);
+}
+.asepp-img {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 66%;
+  z-index: 2;
+}
+.asepp-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.7s ease;
+  transform-origin: center bottom;
+}
+.asepp-card:hover .asepp-img img {
+  transform: rotate(5deg) scale(1.04);
+}
+.asepp-blue {
+  position: absolute;
+  bottom: -8%;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  z-index: 1;
+}
+.asepp-blue svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.asepp-pill {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  background: #fff;
+  border-radius: 50px 50px 50px 0;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  z-index: 3;
+  padding: 8px 10px 10px;
+  text-align: center;
+}
+.asepp-label {
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: #666;
+  line-height: 1;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+.asepp-name {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0094d9;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+@media (max-width: 900px) {
+  .asepp-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+  .asepp-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .asepp-wrap { padding: 20px 12px; }
+}
+</style>
+
+<section class="asepp-wrap">
+  <div class="asepp-inner">
+
+    <div class="asepp-header">
+      <h2 class="asepp-header-title">Equipos de Protección Personal (EPP) de Calidad en Lima, Perú</h2>
+      <p class="asepp-header-text">Descubra una amplia selección de Equipos de Protección Personal (EPP) en Lima, Perú. Ofrecemos productos de protección personal, seguridad vial, calzado de seguridad, cascos, trajes desechables, arneses, guantes, lentes, botas y mucho más. Estamos aquí para ayudarle a encontrar los productos que necesita para su seguridad. ¡Contáctenos a través de WhatsApp y un asesor de ventas estará encantado de proporcionarle cotizaciones y responder a sus preguntas!</p>
+    </div>
+
+    <div class="asepp-grid">
+
+      <a href="https://andes-safety.com/categoria-producto/proteccion-auditiva/" class="asepp-card">
+        <div class="asepp-img"><img src="https://banamailing.com/andes-safety/wp-content/uploads/2023/10/orejera.png" alt="Protección Auditiva" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="asepp-blue"><svg viewBox="0 0 200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 L200,10 L200,90 L0,90 Z" fill="#0493D2"/></svg></div>
+        <div class="asepp-pill"><div class="asepp-label">Protección</div><div class="asepp-name">Auditiva</div></div>
+      </a>
+
+      <a href="https://andes-safety.com/categoria-producto/proteccion-respiratoria/" class="asepp-card">
+        <div class="asepp-img"><img src="https://banamailing.com/andes-safety/wp-content/uploads/2023/10/Respiratorio.png" alt="Protección Respiratoria" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="asepp-blue"><svg viewBox="0 0 200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 L200,10 L200,90 L0,90 Z" fill="#0493D2"/></svg></div>
+        <div class="asepp-pill"><div class="asepp-label">Protección</div><div class="asepp-name">Respiratoria</div></div>
+      </a>
+
+      <a href="https://andes-safety.com/categoria-producto/proteccion-caidas/" class="asepp-card">
+        <div class="asepp-img"><img src="https://banamailing.com/andes-safety/wp-content/uploads/2023/10/Caidas-1.png" alt="Protección Contra Caídas" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="asepp-blue"><svg viewBox="0 0 200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 L200,10 L200,90 L0,90 Z" fill="#0493D2"/></svg></div>
+        <div class="asepp-pill"><div class="asepp-label">Protección Contra</div><div class="asepp-name">Caídas</div></div>
+      </a>
+
+      <a href="https://andes-safety.com/categoria-producto/calzado-industrial/" class="asepp-card">
+        <div class="asepp-img"><img src="https://andes-safety.com/wp-content/uploads/2024/08/BOTIN-BOMPEL%C2%AE-9000A-PLUS-DIELECTRICO-jpg.webp" alt="Calzado de Seguridad" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="asepp-blue"><svg viewBox="0 0 200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 L200,10 L200,90 L0,90 Z" fill="#0493D2"/></svg></div>
+        <div class="asepp-pill"><div class="asepp-label">Calzado de</div><div class="asepp-name">Seguridad</div></div>
+      </a>
+
+      <a href="https://andes-safety.com/categoria-producto/proteccion-de-manos/" class="asepp-card">
+        <div class="asepp-img"><img src="https://banamailing.com/andes-safety/wp-content/uploads/2023/10/Manos-1.png" alt="Protección de Manos" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="asepp-blue"><svg viewBox="0 0 200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 L200,10 L200,90 L0,90 Z" fill="#0493D2"/></svg></div>
+        <div class="asepp-pill"><div class="asepp-label">Protección de</div><div class="asepp-name">Manos</div></div>
+      </a>
+
+      <a href="https://andes-safety.com/categoria-producto/corporal-y-piel/" class="asepp-card">
+        <div class="asepp-img"><img src="https://banamailing.com/andes-safety/wp-content/uploads/2023/10/Corporal-y-Piel-1.png" alt="Protección Corporal y Piel" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="asepp-blue"><svg viewBox="0 0 200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 L200,10 L200,90 L0,90 Z" fill="#0493D2"/></svg></div>
+        <div class="asepp-pill"><div class="asepp-label">Corporal y</div><div class="asepp-name">Piel</div></div>
+      </a>
+
+      <a href="https://andes-safety.com/categoria-producto/proteccion-visual-y-facial/" class="asepp-card">
+        <div class="asepp-img"><img src="https://banamailing.com/andes-safety/wp-content/uploads/2023/10/Facial-y-Ojos.png" alt="Protección Facial y Ojos" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="asepp-blue"><svg viewBox="0 0 200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 L200,10 L200,90 L0,90 Z" fill="#0493D2"/></svg></div>
+        <div class="asepp-pill"><div class="asepp-label">Facial y</div><div class="asepp-name">Ojos</div></div>
+      </a>
+
+      <a href="https://andes-safety.com/categoria-producto/proteccion-de-cabeza/" class="asepp-card">
+        <div class="asepp-img"><img src="https://banamailing.com/andes-safety/wp-content/uploads/2023/10/Cabeza-1.png" alt="Protección de Cabeza" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="asepp-blue"><svg viewBox="0 0 200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 L200,10 L200,90 L0,90 Z" fill="#0493D2"/></svg></div>
+        <div class="asepp-pill"><div class="asepp-label">Protección de</div><div class="asepp-name">Cabeza</div></div>
+      </a>
+
+      <a href="https://andes-safety.com/categoria-producto/emergencia-y-bloqueo/" class="asepp-card">
+        <div class="asepp-img"><img src="https://banamailing.com/andes-safety/wp-content/uploads/2023/10/Bloqueo.png" alt="Bloqueo y Etiquetado" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="asepp-blue"><svg viewBox="0 0 200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 L200,10 L200,90 L0,90 Z" fill="#0493D2"/></svg></div>
+        <div class="asepp-pill"><div class="asepp-label">Bloqueo y</div><div class="asepp-name">Etiquetado</div></div>
+      </a>
+
+      <a href="https://andes-safety.com/categoria-producto/iluminacion/" class="asepp-card">
+        <div class="asepp-img"><img src="https://andes-safety.com/wp-content/uploads/2024/08/LINTERNA-COAST%C2%AE-HZ050-270-LUMEN-jpg.webp" alt="Iluminación" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="asepp-blue"><svg viewBox="0 0 200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 L200,10 L200,90 L0,90 Z" fill="#0493D2"/></svg></div>
+        <div class="asepp-pill"><div class="asepp-label">Seguridad en</div><div class="asepp-name">Iluminación</div></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+</body>
+</html>

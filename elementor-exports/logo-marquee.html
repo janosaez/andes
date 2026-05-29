@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Logo Marquee — Andes Safety</title>
+</head>
+<body style="margin:0;background:#fff;">
+
+<style>
+.as-logo-marquee{
+  width:100vw !important;
+  max-width:none !important;
+  margin-left:calc(50% - 50vw) !important;
+  height:150px !important;
+  min-height:150px !important;
+  transform:none !important;
+  background:#fff !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:center !important;
+}
+.as-logo-track{
+  width:100%;
+  max-width:1300px;
+  margin:0 auto;
+  height:100%;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:34px;
+}
+.as-logo-row{
+  display:flex;
+  width:max-content;
+  animation:asLogoMove 28s linear infinite;
+  will-change:transform;
+}
+.as-logo-row-reverse{
+  animation-direction:reverse;
+  animation-duration:32s;
+}
+.as-logo-set{
+  display:flex;
+  align-items:center;
+  gap:34px;
+  padding-right:34px;
+  flex:0 0 auto;
+}
+.as-logo-set img{
+  width:auto !important;
+  height:auto !important;
+  max-width:84px !important;
+  max-height:29px !important;
+  object-fit:contain;
+  display:block;
+  flex:0 0 auto;
+}
+.as-logo-row:hover{
+  animation-play-state:paused;
+}
+@keyframes asLogoMove{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+@media(max-width:1300px){
+  .as-logo-marquee{ width:100% !important; }
+}
+@media(max-width:768px){
+  .as-logo-marquee{
+    width:100% !important;
+    max-width:100% !important;
+    height:170px !important;
+    min-height:170px !important;
+    margin:0 auto !important;
+    background:#fff !important;
+    overflow:hidden !important;
+    display:flex !important;
+    align-items:center !important;
+  }
+  .as-logo-track{ gap:22px; }
+  .as-logo-row{ animation-duration:20s; }
+  .as-logo-row-reverse{ animation-duration:24s; }
+  .as-logo-set{ gap:24px; padding-right:24px; }
+  .as-logo-set img{ max-width:74px !important; max-height:25px !important; }
+}
+</style>
+
+<section class="as-logo-marquee">
+  <div class="as-logo-track">
+
+    <div class="as-logo-row">
+      <div class="as-logo-set">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2024/08/Logo_Honeywell.png" alt="Honeywell">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2024/08/Logo-COAST.png" alt="COAST">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/msa.png" alt="MSA">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/rostaing-L32328.gif" alt="Rostaing">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/RAYTAN.png" alt="Raytan">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/SHOWA_Logoweb1.png" alt="Showa">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-HAWS.png" alt="Haws">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2023/03/Guardian-Master-Logo-Colour1-1-jpg.webp" alt="Guardian">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2024/08/Logo_GX.png" alt="GX">
+      </div>
+      <div class="as-logo-set" aria-hidden="true">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2024/08/Logo_Honeywell.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2024/08/Logo-COAST.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/msa.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/rostaing-L32328.gif" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/RAYTAN.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/SHOWA_Logoweb1.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-HAWS.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2023/03/Guardian-Master-Logo-Colour1-1-jpg.webp" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2024/08/Logo_GX.png" alt="">
+      </div>
+    </div>
+
+    <div class="as-logo-row as-logo-row-reverse">
+      <div class="as-logo-set">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2024/08/Logo-Ansell.png" alt="Ansell">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2024/08/MCR_horiz_png.png" alt="MCR Safety">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2021/09/LOGO-12.png" alt="Blue Eagle">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/3m.png" alt="3M">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/Air.png" alt="Air">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/bompel-350x150-1.png" alt="Bompel">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/elvex.png" alt="Elvex">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-ABUS.png" alt="Abus">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/logo-aviator-jpg.webp" alt="Aviator">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-DuPont-web.png" alt="DuPont">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-ERB.png" alt="ERB">
+      </div>
+      <div class="as-logo-set" aria-hidden="true">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2024/08/Logo-Ansell.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2024/08/MCR_horiz_png.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2021/09/LOGO-12.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/3m.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/Air.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/bompel-350x150-1.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/elvex.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-ABUS.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/logo-aviator-jpg.webp" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-DuPont-web.png" alt="">
+        <img width="84" height="29" src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-ERB.png" alt="">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
