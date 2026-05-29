@@ -612,23 +612,23 @@
 .ash-mega {
   display: none;
   position: fixed;
-  left: 0;
-  right: 0;
-  top: auto;
+  top: 214px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1300px, 96vw);
   background: #fff;
   z-index: 8000;
   box-shadow: 0 12px 40px rgba(0,0,0,0.18);
   border-top: 3px solid #0491D0;
+  border-radius: 0 0 16px 16px;
   animation: megaSlide 0.22s ease;
 }
 .ash-cat-item:hover .ash-mega { display: block; }
 @keyframes megaSlide {
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 .ash-mega-inner {
-  max-width: 1300px;
-  margin: 0 auto;
   padding: 28px 24px;
   display: grid;
   grid-template-columns: 180px 1fr auto;
