@@ -1,94 +1,5 @@
 ---
-// Hero Slider — Andes Safety
 ---
-
-<div class="as-hero-wrap">
-<section class="as-slider">
-
-  <div class="as-slides">
-
-    <!-- clone S2 — pos 0 -->
-    <div class="as-slide" aria-hidden="true">
-      <picture>
-        <source media="(max-width:768px)" srcset="https://banamailing.com/andes-safety/wp-content/uploads/2026/05/emergencia-y-bloqueo-nuevo-moviles-2.avif">
-        <img class="bg" src="https://banamailing.com/andes-safety/wp-content/uploads/2026/05/emergencia-y-bloqueo-nuevo-2.avif" alt="">
-      </picture>
-      <div class="as-overlay"></div>
-      <div class="as-content as-content-left">
-        <div class="as-brand-box">
-          <img src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-HAWS.png" alt="">
-          <img src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-ABUS.png" alt="">
-        </div>
-        <div class="as-title-top as-title-top-left">EMERGENCIA Y BLOQUEO</div>
-        <div class="as-subtitle as-subtitle-left">Anticipa las situaciones críticas y mantén la tranquilidad con productos confiables</div>
-      </div>
-    </div>
-
-    <!-- SLIDE 1 — pos 1 -->
-    <div class="as-slide">
-      <picture>
-        <source media="(max-width:768px)" srcset="https://banamailing.com/andes-safety/wp-content/uploads/2026/05/Proteccion-Caidas-moviles-nuevo.avif">
-        <img class="bg" src="https://banamailing.com/andes-safety/wp-content/uploads/2026/05/Proteccion-Caidas-nuevo-2.avif" alt="Protección contra caídas">
-      </picture>
-      <div class="as-overlay"></div>
-      <div class="as-content">
-        <div class="as-title-top">PROTECCIÓN</div>
-        <div class="as-title-bottom">
-          <span>contra</span>
-          <strong>CAÍDAS</strong>
-        </div>
-        <div class="as-subtitle">¡Proteje tu vida y eleva tu seguridad a nuevos niveles!</div>
-      </div>
-      <div class="as-logo">
-        <img src="https://banamailing.com/andes-safety/wp-content/uploads/2023/03/Guardian-Master-Logo-Colour1-1-jpg.webp" alt="Guardian">
-      </div>
-    </div>
-
-    <!-- SLIDE 2 — pos 2 -->
-    <div class="as-slide">
-      <picture>
-        <source media="(max-width:768px)" srcset="https://banamailing.com/andes-safety/wp-content/uploads/2026/05/emergencia-y-bloqueo-nuevo-moviles-2.avif">
-        <img class="bg" src="https://banamailing.com/andes-safety/wp-content/uploads/2026/05/emergencia-y-bloqueo-nuevo-2.avif" alt="Emergencia y bloqueo">
-      </picture>
-      <div class="as-overlay"></div>
-      <div class="as-content as-content-left">
-        <div class="as-brand-box">
-          <img src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-HAWS.png" alt="Haws">
-          <img src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-ABUS.png" alt="Abus">
-        </div>
-        <div class="as-title-top as-title-top-left">EMERGENCIA Y BLOQUEO</div>
-        <div class="as-subtitle as-subtitle-left">Anticipa las situaciones críticas y mantén la tranquilidad con productos confiables</div>
-      </div>
-    </div>
-
-    <!-- clone S1 — pos 3 -->
-    <div class="as-slide" aria-hidden="true">
-      <picture>
-        <source media="(max-width:768px)" srcset="https://banamailing.com/andes-safety/wp-content/uploads/2026/05/Proteccion-Caidas-moviles-nuevo.avif">
-        <img class="bg" src="https://banamailing.com/andes-safety/wp-content/uploads/2026/05/Proteccion-Caidas-nuevo-2.avif" alt="">
-      </picture>
-      <div class="as-overlay"></div>
-      <div class="as-content">
-        <div class="as-title-top">PROTECCIÓN</div>
-        <div class="as-title-bottom">
-          <span>contra</span>
-          <strong>CAÍDAS</strong>
-        </div>
-        <div class="as-subtitle">¡Proteje tu vida y eleva tu seguridad a nuevos niveles!</div>
-      </div>
-      <div class="as-logo">
-        <img src="https://banamailing.com/andes-safety/wp-content/uploads/2023/03/Guardian-Master-Logo-Colour1-1-jpg.webp" alt="">
-      </div>
-    </div>
-
-  </div>
-
-  <!-- FLECHAS -->
-  <button type="button" class="as-arrow as-prev" onclick="andesPrev()">&#10094;</button>
-  <button type="button" class="as-arrow as-next" onclick="andesNext()">&#10095;</button>
-
-</section>
-</div>
 
 <style>
 *{ box-sizing:border-box; }
@@ -96,8 +7,15 @@
 .as-hero-wrap{
   width:100vw;
   margin-left:calc(50% - 50vw);
-  background:linear-gradient(to bottom, #414141 calc(100% - 90px), transparent calc(100% - 90px));
-  padding:18px 0 42px;
+  margin-top:-10px;
+
+  background:linear-gradient(
+    to bottom,
+    #414141 calc(100% - 30px),
+    transparent calc(100% - 90px)
+  );
+
+  padding:30px 0 0px;
   box-sizing:border-box;
 }
 
@@ -107,10 +25,26 @@
   position:relative; overflow:hidden;
   box-shadow:0 5px 15px rgba(0,0,0,.55);
 }
-.as-slides{ width:100%; height:440px; display:flex; transition:transform .7s ease; }
-.as-slide{ min-width:100%; width:100%; height:440px; flex:0 0 100%; position:relative; overflow:hidden; }
-.as-slide picture{ display:block; width:100%; height:100%; }
-.as-slide img.bg{ width:100%; height:440px; object-fit:cover; object-position:center; display:block; }
+.as-slides{
+  width:200%;
+  height:440px;
+  display:flex;
+  animation:andesSlide 18s infinite ease-in-out;
+}
+.as-slide{
+  width:50%;
+  min-width:50%;
+  height:440px;
+  flex:0 0 50%;
+  position:relative;
+  overflow:hidden;
+}
+.as-bg-s1{ background-image:url('https://banamailing.com/andes-safety/wp-content/uploads/2026/05/Proteccion-Caidas-nuevo-2-1.avif'); background-size:cover; background-position:center; }
+.as-bg-s2{ background-image:url('https://banamailing.com/andes-safety/wp-content/uploads/2026/05/emergencia-y-bloqueo-nuevo-2-1.avif'); background-size:cover; background-position:center; }
+@media(max-width:768px){
+  .as-bg-s1{ background-image:url('https://banamailing.com/andes-safety/wp-content/uploads/2026/05/Proteccion-Caidas-moviles-nuevo-1.avif'); }
+  .as-bg-s2{ background-image:url('https://banamailing.com/andes-safety/wp-content/uploads/2026/05/emergencia-y-bloqueo-nuevo-moviles-2-1.avif'); }
+}
 
 .as-brand-box{ display:flex; align-items:center; gap:22px; width:max-content; background:#fff; padding:12px 32px 10px; border-radius:26px 26px 0 0; margin-bottom:0; }
 .as-brand-box img{ height:34px; width:auto; object-fit:contain; }
@@ -170,56 +104,78 @@
   .as-title-top-left{ font-size:19px !important; height:40px !important; width:280px !important; padding:0 5px !important; }
   .as-subtitle-left{ font-size:12px !important; line-height:1.4 !important; max-width:250px !important; }
 }
+
+@keyframes andesSlide{
+  0%{ transform:translateX(0); }
+  42%{ transform:translateX(0); }
+  55%{ transform:translateX(-50%); }
+  92%{ transform:translateX(-50%); }
+  100%{ transform:translateX(0); }
+}
 </style>
 
-<script>
-(function(){
-  var DURATION = 700;
-  var idx = 1;
-  var realCount = 2;
-  var timer = null;
-  var busy = false;
+<div class="as-hero-wrap">
+<section class="as-slider">
+  <div class="as-slides">
 
-  function goTo(index, animate){
-    var slider = document.querySelector('.as-slider');
-    if(!slider) return;
-    var wrapper = slider.querySelector('.as-slides');
-    idx = index;
-    wrapper.style.transition = animate ? ('transform ' + DURATION + 'ms ease') : 'none';
-    wrapper.style.transform = 'translateX(-' + (idx * 100) + '%)';
-  }
+    <!-- clone S2 — pos 0 -->
+    <div class="as-slide as-bg-s2" aria-hidden="true">
+      <div class="as-overlay"></div>
+      <div class="as-content as-content-left">
+        <div class="as-brand-box">
+          <img src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-HAWS.png" alt="">
+          <img src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-ABUS.png" alt="">
+        </div>
+        <div class="as-title-top as-title-top-left">EMERGENCIA Y BLOQUEO</div>
+        <div class="as-subtitle as-subtitle-left">Anticipa las situaciones críticas y mantén la tranquilidad con productos confiables</div>
+      </div>
+    </div>
 
-  function andesNext(){
-    if(busy) return;
-    goTo(idx - 1, true);
-    if(idx === 0){
-      busy = true;
-      setTimeout(function(){ goTo(realCount, false); busy = false; }, DURATION);
-    }
-    andesRestartTimer();
-  }
+    <!-- SLIDE 1 — pos 1 -->
+    <div class="as-slide as-bg-s1">
+      <div class="as-overlay"></div>
+      <div class="as-content">
+        <div class="as-title-top">PROTECCIÓN</div>
+        <div class="as-title-bottom">
+          <span>contra</span>
+          <strong>CAÍDAS.</strong>
+        </div>
+        <div class="as-subtitle">¡Proteje tu vida y eleva tu seguridad a nuevos niveles!</div>
+      </div>
+      <div class="as-logo">
+        <img src="https://banamailing.com/andes-safety/wp-content/uploads/2023/03/Guardian-Master-Logo-Colour1-1-jpg.webp" alt="Guardian">
+      </div>
+    </div>
 
-  function andesPrev(){
-    if(busy) return;
-    goTo(idx + 1, true);
-    if(idx === realCount + 1){
-      busy = true;
-      setTimeout(function(){ goTo(1, false); busy = false; }, DURATION);
-    }
-    andesRestartTimer();
-  }
+    <!-- SLIDE 2 — pos 2 -->
+    <div class="as-slide as-bg-s2">
+      <div class="as-overlay"></div>
+      <div class="as-content as-content-left">
+        <div class="as-brand-box">
+          <img src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-HAWS.png" alt="Haws">
+          <img src="https://banamailing.com/andes-safety/wp-content/uploads/2020/10/LOGO-ABUS.png" alt="Abus">
+        </div>
+        <div class="as-title-top as-title-top-left">EMERGENCIA Y BLOQUEO</div>
+        <div class="as-subtitle as-subtitle-left">Anticipa las situaciones críticas y mantén la tranquilidad con productos confiables</div>
+      </div>
+    </div>
 
-  function andesRestartTimer(){
-    clearInterval(timer);
-    timer = setInterval(andesNext, 6000);
-  }
+    <!-- clone S1 — pos 3 -->
+    <div class="as-slide as-bg-s1" aria-hidden="true">
+      <div class="as-overlay"></div>
+      <div class="as-content">
+        <div class="as-title-top">PROTECCIÓN</div>
+        <div class="as-title-bottom">
+          <span>contra</span>
+          <strong>CAÍDAS</strong>
+        </div>
+        <div class="as-subtitle">¡Proteje tu vida y eleva tu seguridad a nuevos niveles!</div>
+      </div>
+      <div class="as-logo">
+        <img src="https://banamailing.com/andes-safety/wp-content/uploads/2023/03/Guardian-Master-Logo-Colour1-1-jpg.webp" alt="">
+      </div>
+    </div>
 
-  document.addEventListener('DOMContentLoaded', function(){
-    goTo(1, false);
-    andesRestartTimer();
-  });
-
-  window.andesNext = andesNext;
-  window.andesPrev = andesPrev;
-})();
-</script>
+  </div>
+</section>
+</div>
