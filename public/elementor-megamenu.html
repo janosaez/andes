@@ -1,6 +1,14 @@
 <style>
 .ash-cat *, .ash-cat *::before, .ash-cat *::after { box-sizing: border-box; margin: 0; padding: 0; }
 .ash-wave-wrap { background: #ffffff; line-height: 0; margin-bottom: -22px; position: relative; z-index: 5; }
+.ash-fullwidth-wrap {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
 
 .ash-cat {
   background: #313131;
@@ -161,6 +169,7 @@
 }
 </style>
 
+<div class="ash-fullwidth-wrap">
 <div class="ash-wave-wrap" aria-hidden="true">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 22" preserveAspectRatio="none" style="display:block;width:100%;height:22px;">
     <path fill="#ffffff" d="M0,0 L1440,0 L1440,18 C1080,3 360,3 0,18 Z"/>
@@ -373,4 +382,5 @@
 
   </div>
 </nav>
+</div>
 
