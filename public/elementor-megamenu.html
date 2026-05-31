@@ -1,0 +1,381 @@
+<style>
+.ash-cat *, .ash-cat *::before, .ash-cat *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.ash-cat {
+  background: #313131;
+  position: relative;
+  z-index: 4;
+}
+.ash-cat.ash-cat { padding-top: 20px; }
+.ash-cat-inner {
+  width: 1300px !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 20px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+.ash-cat-item { position: relative; display: flex; align-items: stretch; }
+.ash-cat-item:not(:last-child)::after {
+  content: '|';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.3);
+  font-size: 14px;
+  font-weight: 300;
+  pointer-events: none;
+}
+.ash-cat-item > a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255,255,255,0.88);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 24px 15px;
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s;
+  line-height: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+.ash-cat-item:hover > a { color: #2c94cc; background: none; }
+.ash-caret { width: 8px; height: 5px; flex-shrink: 0; opacity: 0.55; transition: transform 0.2s ease; }
+.ash-cat-item:hover .ash-caret { transform: rotate(180deg); opacity: 1; }
+
+.ash-mega {
+  display: none;
+  position: fixed;
+  top: var(--ash-mega-top, 226px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1300px, 96vw);
+  background: linear-gradient(to bottom right, #111111 0%, #2576a1 100%);
+  z-index: 8000;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.28);
+  border-top: 3px solid rgba(255,255,255,0.25);
+  border-radius: 0 0 16px 16px;
+  animation: megaSlide 0.22s ease;
+}
+.ash-cat-item:hover .ash-mega { display: block; }
+@keyframes megaSlide {
+  from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+.ash-mega-inner {
+  padding: 32px 24px;
+  display: grid;
+  grid-template-columns: 240px 1fr 450px;
+  gap: 32px;
+  align-items: center;
+}
+.ash-mega-img {
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.ash-mega-img img {
+  width: 72%;
+  height: 72%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ash-mega-img img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+}
+.ash-mega-body { flex: 1; }
+.ash-mega-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+.ash-mega-body p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  max-width: 420px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+.ash-mega-body .ash-mega-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 24px;
+  background: #0491D0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: italic;
+  border-radius: 50px;
+  text-decoration: none;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+.ash-mega-body .ash-mega-btn:hover { background: #0373a8; transform: translateX(4px); }
+.ash-mega-brands {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  padding: 0 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ash-mega-brands img {
+  flex: 0 1 auto;
+  max-width: 125px;
+  max-height: 104px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 10px;
+  padding: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.ash-mega-brands img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+</style>
+
+<nav class="ash-cat" aria-label="Categorías de productos" id="ash-cat-elementor">
+  <div class="ash-cat-inner">
+
+    <div class="ash-cat-item">
+      <a href="https://andes-safety.com/categoria-producto/proteccion-auditiva/">
+        Auditiva <svg class="ash-caret" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="currentColor"/></svg>
+      </a>
+      <div class="ash-mega">
+        <div class="ash-mega-inner">
+          <div class="ash-mega-img"><img src="https://andes-safety.com/wp-content/uploads/img/proteccion-auditiva-epp-venta-de-epps-jpg.webp" alt="Protección Auditiva"></div>
+          <div class="ash-mega-body">
+            <div class="ash-mega-title">Protección Auditiva</div>
+            <p>La protección auditiva es clave en ambientes ruidosos. Explora nuestras soluciones de tapones y orejeras para cuidar tu audición. Descubre cómo mantener tus oídos seguros y disfrutar de un sonido tranquilo en cualquier entorno.</p>
+            <a href="https://andes-safety.com/categoria-producto/proteccion-auditiva/" class="ash-mega-btn">Ver Productos</a>
+          </div>
+          <div class="ash-mega-brands">
+            <img src="https://andes-safety.com/wp-content/uploads/img/logo-aviator-jpg.webp" alt="Aviator">
+            <img src="https://andes-safety.com/wp-content/uploads/img/3m.png" alt="3M">
+            <img src="https://andes-safety.com/wp-content/uploads/img/msa.png" alt="MSA">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ash-cat-item">
+      <a href="https://andes-safety.com/categoria-producto/proteccion-respiratoria/">
+        Respiratoria <svg class="ash-caret" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="currentColor"/></svg>
+      </a>
+      <div class="ash-mega">
+        <div class="ash-mega-inner">
+          <div class="ash-mega-img"><img src="https://andes-safety.com/wp-content/uploads/img/proteccion-de-respiratoria-epp-venta-de-epps-jpg.webp" alt="Protección Respiratoria"></div>
+          <div class="ash-mega-body">
+            <div class="ash-mega-title">Protección Respiratoria</div>
+            <p>La protección respiratoria es esencial para tu salud. Descubre cómo los dispositivos y máscaras de alta calidad pueden mantener tu aire limpio y seguro. Encuentra los mejores productos para proteger tus vías respiratorias aqui.</p>
+            <a href="https://andes-safety.com/categoria-producto/proteccion-respiratoria/" class="ash-mega-btn">Ver Productos</a>
+          </div>
+          <div class="ash-mega-brands">
+            <img src="https://andes-safety.com/wp-content/uploads/img/3m.png" alt="3M">
+            <img src="https://andes-safety.com/wp-content/uploads/img/Air.png" alt="Air">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ash-cat-item">
+      <a href="https://andes-safety.com/categoria-producto/proteccion-caidas/">
+        Caidas <svg class="ash-caret" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="currentColor"/></svg>
+      </a>
+      <div class="ash-mega">
+        <div class="ash-mega-inner">
+          <div class="ash-mega-img"><img src="https://andes-safety.com/wp-content/uploads/img/proteccion-contra-caidas-epp-venta-de-epps-jpg.webp" alt="Protección Contra Caídas"></div>
+          <div class="ash-mega-body">
+            <div class="ash-mega-title">Protección Caidas</div>
+            <p>Mantén la seguridad en las alturas. Descubre nuestras soluciones de arneses y equipos para trabajos en altura. Garantiza la protección de tu equipo y empleados en entornos elevados. ¡Encuentra la mejor protección contra caídas aquí!</p>
+            <a href="https://andes-safety.com/categoria-producto/proteccion-caidas/" class="ash-mega-btn">Ver Productos</a>
+          </div>
+          <div class="ash-mega-brands">
+            <img src="https://andes-safety.com/wp-content/uploads/img/Guardian-logo_png-1024x386.png" alt="Guardian">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ash-cat-item">
+      <a href="https://andes-safety.com/categoria-producto/calzado-industrial/">
+        Calzado <svg class="ash-caret" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="currentColor"/></svg>
+      </a>
+      <div class="ash-mega">
+        <div class="ash-mega-inner">
+          <div class="ash-mega-img"><img src="https://andes-safety.com/wp-content/uploads/img/proteccion-de-calzado-epp-venta-de-epps-jpg.webp" alt="Calzado de Seguridad"></div>
+          <div class="ash-mega-body">
+            <div class="ash-mega-title">Protección de pies</div>
+            <p>Descubre nuestra amplia gama de calzado de seguridad y botas resistentes. Encuentra el equilibrio perfecto entre comodidad y protección. ¡Protege tus pies con estilo y seguridad hoy mismo!</p>
+            <a href="https://andes-safety.com/categoria-producto/calzado-industrial/" class="ash-mega-btn">Ver Productos</a>
+          </div>
+          <div class="ash-mega-brands">
+            <img src="https://andes-safety.com/wp-content/uploads/img/Logo_Bompel.png" alt="Bompel">
+            <img src="https://andes-safety.com/wp-content/uploads/img/LOGO-ROAD1.png" alt="Road">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ash-cat-item">
+      <a href="https://andes-safety.com/categoria-producto/proteccion-de-manos/">
+        Manos <svg class="ash-caret" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="currentColor"/></svg>
+      </a>
+      <div class="ash-mega">
+        <div class="ash-mega-inner">
+          <div class="ash-mega-img"><img src="https://andes-safety.com/wp-content/uploads/img/proteccion-de-manos-epp-venta-de-epps-1-jpg.webp" alt="Protección de Manos"></div>
+          <div class="ash-mega-body">
+            <div class="ash-mega-title">Protección de manos</div>
+            <p>Explora nuestra selección de guantes resistentes y seguros para diversas actividades. Encuentra la combinación perfecta de comodidad y protección. ¡Protege tus manos con calidad y estilo ahora!</p>
+            <a href="https://andes-safety.com/categoria-producto/proteccion-de-manos/" class="ash-mega-btn">Ver Productos</a>
+          </div>
+          <div class="ash-mega-brands">
+            <img src="https://andes-safety.com/wp-content/uploads/img/LOGO-GALAXY.png" alt="Galaxy">
+            <img src="https://andes-safety.com/wp-content/uploads/img/showa-logo-1x.svg" alt="Showa">
+            <img src="https://andes-safety.com/wp-content/uploads/img/LOGO-ROSTAING.png" alt="Rostaing">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ash-cat-item">
+      <a href="https://andes-safety.com/categoria-producto/corporal-y-piel/">
+        Corporal y Piel <svg class="ash-caret" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="currentColor"/></svg>
+      </a>
+      <div class="ash-mega">
+        <div class="ash-mega-inner">
+          <div class="ash-mega-img"><img src="https://andes-safety.com/wp-content/uploads/img/proteccion-de-corporal-epp-venta-de-epps-jpg.webp" alt="Protección Corporal"></div>
+          <div class="ash-mega-body">
+            <div class="ash-mega-title">Protección Corporal y Piel</div>
+            <p>Encuentra la mejor solución para mantenerte seguro y cómodo en todo momento. ¡Protege tu piel y cuerpo con calidad y estilo hoy mismo!</p>
+            <a href="https://andes-safety.com/categoria-producto/corporal-y-piel/" class="ash-mega-btn">Ver Productos</a>
+          </div>
+          <div class="ash-mega-brands">
+            <img src="https://andes-safety.com/wp-content/uploads/img/3m.png" alt="3M">
+            <img src="https://andes-safety.com/wp-content/uploads/img/LOGO-DuPont-web.png" alt="DuPont">
+            <img src="https://andes-safety.com/wp-content/uploads/img/gx.png" alt="GX">
+            <img src="https://andes-safety.com/wp-content/uploads/img/RAYTAN.png" alt="Raytan">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ash-cat-item">
+      <a href="https://andes-safety.com/categoria-producto/proteccion-visual-y-facial/">
+        Visual y Facial <svg class="ash-caret" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="currentColor"/></svg>
+      </a>
+      <div class="ash-mega">
+        <div class="ash-mega-inner">
+          <div class="ash-mega-img"><img src="https://andes-safety.com/wp-content/uploads/img/proteccion-facial-epp-venta-de-epps-jpg.webp" alt="Protección Visual y Facial"></div>
+          <div class="ash-mega-body">
+            <div class="ash-mega-title">Protección visual y facial</div>
+            <p>Explora nuestra amplia selección de gafas y máscaras protectoras. Encuentra la mejor manera de mantener tu visión y piel seguras en cualquier situación. ¡Protege tus ojos y rostro con estilo y seguridad hoy mismo!</p>
+            <a href="https://andes-safety.com/categoria-producto/proteccion-visual-y-facial/" class="ash-mega-btn">Ver Productos</a>
+          </div>
+          <div class="ash-mega-brands">
+            <img src="https://andes-safety.com/wp-content/uploads/img/elvex.png" alt="Elvex">
+            <img src="https://andes-safety.com/wp-content/uploads/img/LOGO-ERB.png" alt="ERB">
+            <img src="https://andes-safety.com/wp-content/uploads/img/gx.png" alt="GX">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ash-cat-item">
+      <a href="https://andes-safety.com/categoria-producto/proteccion-de-cabeza/">
+        Cabeza <svg class="ash-caret" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="currentColor"/></svg>
+      </a>
+      <div class="ash-mega">
+        <div class="ash-mega-inner">
+          <div class="ash-mega-img"><img src="https://andes-safety.com/wp-content/uploads/img/proteccion-de-cabeza-epp-venta-de-epps-jpg.webp" alt="Protección de Cabeza"></div>
+          <div class="ash-mega-body">
+            <div class="ash-mega-title">Protección de Cabeza</div>
+            <p>Encuentra la mejor manera de mantener tu cabeza a salvo sin sacrificar comodidad ni estilo. ¡Protege tu cabeza con productos de calidad hoy mismo!</p>
+            <a href="https://andes-safety.com/categoria-producto/proteccion-de-cabeza/" class="ash-mega-btn">Ver Productos</a>
+          </div>
+          <div class="ash-mega-brands">
+            <img src="https://andes-safety.com/wp-content/uploads/img/msa.png" alt="MSA">
+            <img src="https://andes-safety.com/wp-content/uploads/img/LOGO-ERB.png" alt="ERB">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ash-cat-item">
+      <a href="https://andes-safety.com/categoria-producto/emergencia-y-bloqueo/">
+        Emergencia y bloqueo <svg class="ash-caret" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="currentColor"/></svg>
+      </a>
+      <div class="ash-mega">
+        <div class="ash-mega-inner">
+          <div class="ash-mega-img"><img src="https://andes-safety.com/wp-content/uploads/img/equipos-de-bloqueo-epp-venta-de-epps-jpg.webp" alt="Emergencia y Bloqueo"></div>
+          <div class="ash-mega-body">
+            <div class="ash-mega-title">Emergencia y Bloqueo</div>
+            <p>Encuentra soluciones efectivas para emergencias y bloqueo, garantizando un entorno seguro y controlado. ¡Mantén la tranquilidad con productos de calidad en todo momento!</p>
+            <a href="https://andes-safety.com/categoria-producto/emergencia-y-bloqueo/" class="ash-mega-btn">Ver Productos</a>
+          </div>
+          <div class="ash-mega-brands">
+            <img src="https://andes-safety.com/wp-content/uploads/img/LOGO-ABUS.png" alt="Abus">
+            <img src="https://andes-safety.com/wp-content/uploads/img/LOGO-HAWS.png" alt="Haws">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ash-cat-item">
+      <a href="https://andes-safety.com/categoria-producto/iluminacion/">
+        Iluminación <svg class="ash-caret" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z" fill="currentColor"/></svg>
+      </a>
+      <div class="ash-mega">
+        <div class="ash-mega-inner">
+          <div class="ash-mega-img"><img src="https://andes-safety.com/wp-content/uploads/img/Trabajado_AndesSafety.png" alt="Iluminación"></div>
+          <div class="ash-mega-body">
+            <div class="ash-mega-title">Iluminación</div>
+            <p>Descubre nuestras soluciones de iluminación de seguridad industrial en Andes Safety, diseñadas para garantizar visibilidad y protección en cualquier entorno de trabajo. Mantén a tu equipo seguro con productos de alta calidad que cumplen con los más altos estándares de seguridad.</p>
+            <a href="https://andes-safety.com/categoria-producto/iluminacion/" class="ash-mega-btn">Ver Productos</a>
+          </div>
+          <div class="ash-mega-brands"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<script>
+(function(){
+  function updateMegaTop() {
+    var cat = document.getElementById('ash-cat-elementor');
+    if (!cat) return;
+    var top = cat.getBoundingClientRect().bottom;
+    document.documentElement.style.setProperty('--ash-mega-top', top + 'px');
+  }
+  updateMegaTop();
+  window.addEventListener('resize', updateMegaTop);
+  window.addEventListener('scroll', updateMegaTop);
+})();
+</script>
