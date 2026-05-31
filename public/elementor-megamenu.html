@@ -5,7 +5,8 @@
 .ash-cat {
   background: #313131;
   position: relative;
-  z-index: 4;
+  z-index: 9999;
+  overflow: visible;
 }
 .ash-cat.ash-cat { padding-top: 20px; }
 .ash-cat-inner {
@@ -51,13 +52,13 @@
 
 .ash-mega {
   display: none;
-  position: fixed;
-  top: var(--ash-mega-top, 226px);
+  position: absolute;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   width: min(1300px, 96vw);
   background: linear-gradient(to bottom right, #111111 0%, #2576a1 100%);
-  z-index: 8000;
+  z-index: 9999;
   box-shadow: 0 12px 40px rgba(0,0,0,0.28);
   border-top: 3px solid rgba(255,255,255,0.25);
   border-radius: 0 0 16px 16px;
@@ -373,16 +374,3 @@
   </div>
 </nav>
 
-<script>
-(function(){
-  function updateMegaTop() {
-    var cat = document.getElementById('ash-cat-elementor');
-    if (!cat) return;
-    var top = cat.getBoundingClientRect().bottom;
-    document.documentElement.style.setProperty('--ash-mega-top', top + 'px');
-  }
-  updateMegaTop();
-  window.addEventListener('resize', updateMegaTop);
-  window.addEventListener('scroll', updateMegaTop);
-})();
-</script>
