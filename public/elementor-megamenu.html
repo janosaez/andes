@@ -1,5 +1,6 @@
 <style>
 .ash-cat *, .ash-cat *::before, .ash-cat *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.ash-wave-wrap { background: #ffffff; line-height: 0; margin-bottom: -1px; }
 
 .ash-cat {
   background: #313131;
@@ -158,6 +159,12 @@
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 </style>
+
+<div class="ash-wave-wrap" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 22" preserveAspectRatio="none" style="display:block;width:100%;height:22px;">
+    <path fill="#313131" d="M0,0 L1440,0 L1440,18 C1080,3 360,3 0,18 Z"/>
+  </svg>
+</div>
 
 <nav class="ash-cat" aria-label="Categorías de productos" id="ash-cat-elementor">
   <div class="ash-cat-inner">
